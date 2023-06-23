@@ -5,8 +5,8 @@ import uuid from "react-uuid";
 const ADD_TODO = "ADD_TODO";
 
 const DELETE_TODO = "DELETE_TODO";
-const ING_TODO = "ING_TODO";
-const DONE_TODO = "DONE_TODO";
+// const ING_TODO = "ING_TODO";
+// const DONE_TODO = "DONE_TODO";
 
 // Action Creator
 // payload : “N을 더해”
@@ -20,14 +20,14 @@ export const deleteTodo = (id) => {
 
 // 진행 중인 Todo를 가져오는 함수
 
-export const get_ing_Todo = (state) => {
-  return { type: ING_TODO, state };
-};
+// export const get_ing_Todo = (state) => {
+//   return { type: ING_TODO, state };
+// };
 
-// 완료된 Todo를 가져오는 함수
-export const get_done_Todo = (state) => {
-  return { type: DONE_TODO, state };
-};
+// // 완료된 Todo를 가져오는 함수
+// export const get_done_Todo = (state) => {
+//   return { type: DONE_TODO, state };
+// };
 
 // initial State
 
@@ -67,17 +67,17 @@ const todos = (state = initialState, action) => {
         ...state,
         todos: state.todos.filter((todo) => todo.id !== action.id),
       };
-    case ING_TODO:
-      return {
-        ...state,
+    // case ING_TODO:
+    //   return {
+    //     ...state,
         
-        todos: state.todos.filter((todo) => !todo.isDone),
-      };
-    case DONE_TODO:
-      return {
-        ...state,
-        todos: state.todos.filter((todo) => todo.isDone),
-      };
+    //     todos: state.todos.filter((todo) => !todo.isDone),
+    //   };
+    // case DONE_TODO:
+    //   return {
+    //     ...state,
+    //     todos: state.todos.filter((todo) => todo.isDone),
+    //   };
     default:
       return state;
   }

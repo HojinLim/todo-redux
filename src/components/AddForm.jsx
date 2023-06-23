@@ -20,7 +20,8 @@ const AddForm = () => {
       addTodo({
         id: uuid(),
         title,
-        contents
+        contents,
+        isDone: false
       })
     );
     
